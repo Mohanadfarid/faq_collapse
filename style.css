@@ -1,0 +1,99 @@
+@import url("https://fonts.googleapis.com/css2?family=Overpass:wght@400;700&family=Roboto:wght@400;700&display=swap");
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  margin: 0;
+  background-color: #f0f0f0;
+}
+
+h1 {
+  font-size: 30px;
+}
+
+.faq {
+  position: relative;
+  min-width: 600px;
+  border: 1px solid #9fa4a8;
+  padding: 10px 30px;
+  margin: 20px 0;
+  border-radius: 10px;
+  height: auto;
+  overflow: hidden;
+}
+
+.btn {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  font-size: 16px;
+  font-weight: bolder;
+  border: 0;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.faq.active {
+  height: auto;
+  background-color: white;
+  box-shadow: 0 3px 6px rgb(0 0 0 / 10%), 0 3px 6px rgb(0 0 0 / 10%);
+}
+
+.faq .answer {
+  display: none;
+}
+
+.faq.active .answer {
+  display: block;
+}
+
+.faq.active .btn{
+  background-color: #9fa4a8;
+  color: white;
+}
+
+.faq.active .fa-solid.fa-angle-down{
+  display: none;
+}
+
+.faq .fa-solid.fa-xmark{
+  display: none;
+}
+
+.faq.active .fa-solid.fa-xmark{
+  display: block;
+}
+
+.faq.active::before,
+.faq.active::after {
+  content: '\f075';
+  font-family: 'Font Awesome 5 Free';
+  color: #2ecc71;
+  font-size: 7rem;
+  position: absolute;
+  opacity: 0.2;
+  top: 20px;
+  left: 20px;
+  z-index: 0;
+}
+
+.faq.active::before {
+  color: #3498db;
+  top: -10px;
+  left: -30px;
+  transform: rotateY(180deg);
+}
